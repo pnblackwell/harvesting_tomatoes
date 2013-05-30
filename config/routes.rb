@@ -1,7 +1,7 @@
 HarvestingTomatoes::Application.routes.draw do
   
   resources :harvest
-  resources :tasks
+  resources :users
 
   match '/', to: 'harvest#index'
 

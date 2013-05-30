@@ -1,12 +1,7 @@
 require 'harvested'
 
-class Harvest < ActiveResource::Base
+class Harvest < ActiveRecord::Base
 
-
-
-  def self.view_all_projects
-    harvest = Harvest.client('pnbwell', 'pnbwell', 'harvestingtomatoes')
-    harvest.projects.all
-  end
+belongs_to :user
 
 end
