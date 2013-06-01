@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530024010) do
+ActiveRecord::Schema.define(:version => 20130530194547) do
+
+  create_table "harvest_info", :force => true do |t|
+    t.string  "subdomain"
+    t.string  "username"
+    t.string  "password"
+    t.integer "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
