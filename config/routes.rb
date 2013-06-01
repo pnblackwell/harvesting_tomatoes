@@ -5,6 +5,7 @@ HarvestingTomatoes::Application.routes.draw do
   resources :timers, only: [] do
     member do
       get :toggle
+      get :get_tasks
     end
   end
 
