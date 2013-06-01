@@ -13,18 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-function getResponse() {
-
-    var the_url = "https://pnbwell.harvestapp.com/daily/timer/150844187";
-
-    $.ajax({
-      url: the_url,
-      dataType: 'json',
-      type: 'get',
-      success: function(data) {
-        var json_response = data;
-        alert(data);
-      }
-    });
-}
