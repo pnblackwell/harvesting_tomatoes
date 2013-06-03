@@ -10,6 +10,6 @@ HarvestingTomatoes::Application.routes.draw do
   end
 
   match '/', to: 'harvest_info#index', as: 'dashboard'
-  match 'auth/harvest/callback', to: 'sessions#create'
+  match '/auth/harvest/callback', to: 'sessions#create'
 
 end
