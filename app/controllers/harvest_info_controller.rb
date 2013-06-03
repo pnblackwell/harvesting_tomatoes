@@ -5,4 +5,8 @@ class HarvestInfoController < ActionController::Base
     @harvest = harvest.projects.all
     # @timer = HarvestInfo.toggle_timer
   end
+
+  def new
+    
+  end
 end

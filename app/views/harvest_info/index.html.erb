@@ -44,9 +44,21 @@ $(function() {
   });
 });
 
+<div id="tasks_data">
+
 </script>
 <%= link_to 'start timer', '/toggle', class: 'toggle' %>
 <%= link_to 'toggle', toggle_timer_path(1) %>
-<%= link_to 'get tasks', get_tasks_timer_path(1) %>
 <%#= link_to 'toggle', 'https://pnbwell.harvestapp.com/daily/timer/150844187', class: 'toggle' %>
 <div id="timer"></div>
+
+  <%if current_user %>
+      <ul class="navLinks">
+        <li><%= current_user.username %></li>
+      </ul>
+  <% else %>
+    <p>
+      <%= link_to 'Sign Up with Harvest', '/auth/harvest' %>
+      <%= link_to image_tag("signInWithHarvest.png"),"" , id: 'signin' %>
+    </p>
+  <% end %>

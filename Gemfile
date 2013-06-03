@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'harvested'
 gem 'faraday'
+gem 'omniauth-harvest'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,11 +24,12 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'better_errors'
   gem 'rspec-rails', '~> 2.13.1'
-  gem 'pry'
   gem 'capybara', '~>2.1.0'
+  gem 'better_errors'
+  gem 'pry'
   gem 'binding_of_caller'
+
 end
 
 group :test do

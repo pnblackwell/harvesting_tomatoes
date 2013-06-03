@@ -1,3 +1,5 @@
+require 'json'
+
 class TimersController < ActionController::Base
 
   def toggle
@@ -13,7 +15,7 @@ class TimersController < ActionController::Base
     # conn.basic_auth(token)
     conn.headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json', 'Authorization' => "Basic #{token}"}
     response = conn.get '/daily/timer/150844187'
-    render text: response.inspect
+    # render text: response.inspect
   end
 
   def get_tasks
@@ -27,7 +29,7 @@ class TimersController < ActionController::Base
     
     conn.headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json', 'Authorization' => "Basic #{token}"}
     response = conn.get '/daily'
-    render text: response.inspect
+    # render text: response.inspect
   end
 
 end
