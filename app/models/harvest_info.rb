@@ -3,8 +3,6 @@ require 'harvested'
 class HarvestInfo < ActiveRecord::Base
 
 belongs_to :user
-validates_presence_of :subdomain, :username, :password
-validates_uniqueness_of :subdomain, :username, :password
 
   # def toggle_timer
   #   conn = Faraday.new
@@ -12,6 +10,18 @@ validates_uniqueness_of :subdomain, :username, :password
   #   conn.headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json', 'Authorization' => "Basic #{basic_auth_token}"}
   #   conn.params = {:username => 'pnblackwell@gmail.com', :password => 'harvestingtomatoes'}
   # end
+
+  def get_projects
+    subdomain = pnbwell
+    conn = Faraday.new(:url => "http.#{subdomain}.harvestapp.com") do |faraday|
+      faraday.request  :url_encoded             # form-encode POST params
+      faraday.response :logger                  # log requests to STDOUT
+      faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+    end
+
+    response = conn.get '/projects'
+
+  end
 
 
   private

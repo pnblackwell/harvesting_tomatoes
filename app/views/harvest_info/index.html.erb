@@ -1,3 +1,4 @@
+<header> </header>
 <h1> Harvesting Tomatoes </h1>
 
 <%= link_to 'start timer', '#', class: 'toggle' %>
@@ -7,4 +8,9 @@
 <div id="timer"></div>
 
   
-<%= link_to 'Sign Up with Harvest', '/auth/harvest' %>
+<% if current_user %>
+  <%= link_to 'sign_out', signout_path   %></li>
+<% else %>
+  <%= link_to 'Sign Up with Harvest', '/auth/harvest' %></li>
+<% end %>
+

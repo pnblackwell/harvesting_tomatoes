@@ -5,11 +5,9 @@ describe "New user signs up" do
   context "with valid credentials" do
     
     it 'signs the user up and redirects to root path' do
-      visit '/'
-      click_button 'Sign Up with Harvest'
-      fill_in 'user[email]', with: 'user@example.com'
-      fill_in 'user[password]', with: 'password'
-      click_button 'Submit'
+      mock_auth_hash
+      visit dashboard_path
+      click_link 'Sign Up with Harvest'
 
       expect(current_path).to eq 'dashboard_path'
     end

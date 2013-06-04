@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603190521) do
+ActiveRecord::Schema.define(:version => 20130604050737) do
 
   create_table "harvest_info", :force => true do |t|
     t.string  "subdomain"
@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(:version => 20130603190521) do
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "provider"
     t.string   "provider_id"
+    t.string   "token"
+    t.string   "refresh_token"
   end
 
 end

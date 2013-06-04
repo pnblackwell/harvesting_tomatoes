@@ -11,5 +11,6 @@ HarvestingTomatoes::Application.routes.draw do
 
   match '/', to: 'harvest_info#index', as: 'dashboard'
   match '/auth/harvest/callback', to: 'sessions#create'
+  match '/signout', to: 'sessions#destroy', as: 'signout'
 
 end
