@@ -1,4 +1,4 @@
-class HarvestInfoController < ActionController::Base
+class HarvestInfoController < ApplicationController
 
   def index
     harvest = Harvest.client('pnbwell', 'pnblackwell@gmail.com', 'harvestingtomatoes')
