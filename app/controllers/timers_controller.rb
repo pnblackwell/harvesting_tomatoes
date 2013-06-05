@@ -4,15 +4,26 @@ class TimersController < ActionController::Base
 
   def toggle
     #the get_projects method from harvest_info
-    subdomain = 'pnbwell'
-    conn = Faraday.new(:url => "http//#{subdomain}.harvestapp.com") do |faraday|
-      faraday.request  :url_encoded             # form-encode POST params
-      faraday.response :logger                  # log requests to STDOUT
-      faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-    end
+    # subdomain = 'pnbwell'
+    # conn = Faraday.new(:url => "http//#{subdomain}.harvestapp.com") do |faraday|
+    #   faraday.request  :url_encoded             # form-encode POST params
+    #   faraday.response :logger                  # log requests to STDOUT
+    #   faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
+    # end
 
-    response = conn.get '/projects'
-    response.body.inspect
+    # response = conn.get '/projects'
+    # response.body.inspect
+    conn = Faraday.get "https://pnbwell.harvestapp.com/daily", { access_token: session[:token] } do |req|
+      # req.url "https://pnbwell.harvestapp.com/daily" 
+      puts %{
+
+        SESSION TOKEN: #{session[:token]}
+
+      }
+      req.params['access_token'] = session[:token]
+      req.headers['Content-Type'] = 'application/json'
+    end
+    render text: conn.inspect
   end
 
   def get_tasks

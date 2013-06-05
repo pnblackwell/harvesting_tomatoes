@@ -1,6 +1,6 @@
 
 .toggle {
-  color: orange;
+  color: #FF4900;
   hover: purple;
   float: center;
 }
@@ -12,7 +12,7 @@
 header {
   
   background: #7EB12C;
-  height: 120px;
+  height: 180px;
   padding: 0px;
   border: 0px;
   margin: 0px;
@@ -22,4 +22,10 @@ h1 {
   font-family: 'Tangerine', cursive;
   font-size: 80px;
   text-align: center;
+}
+
+#timer {
+  text-align: center;
+  font-size: 300px;
+  color: #FF5900;
 }

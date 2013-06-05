@@ -32,7 +32,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'pry'
   gem 'binding_of_caller'
-
+  gem 'vcr'
+  gem 'fakeweb'
 end
 
 group :test do

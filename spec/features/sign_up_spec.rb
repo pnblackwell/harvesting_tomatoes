@@ -7,7 +7,7 @@ describe "New user signs up" do
     it 'signs the user up and redirects to root path' do
       mock_auth_hash
       visit dashboard_path
-      click_link 'Sign Up with Harvest'
+      click_button 'Sign Up with Harvest'
 
       expect(current_path).to eq 'dashboard_path'
     end

@@ -1,11 +1,11 @@
 <header> </header>
 <h1> Harvesting Tomatoes </h1>
 
-<%= button_to 'start timer', '#', class: 'toggle' %>
-<%= button_to 'toggle', toggle_timer_path(1), :method => :get %>
-<%= button_to 'short break', '#', class: 'break' %>
+<div><%= button_to 'Start Timer', '#', class: 'toggle' %></div>
+<div><%= button_to 'toggle', toggle_timer_path(1), :method => :get %></div>
+<div><%= button_to 'short break', '#', class: 'break' %></div>
 <%#= link_to 'toggle', 'https://pnbwell.harvestapp.com/daily/timer/150844187', class: 'toggle' %>
-<div id="timer"></div>
+<div id="timer">25:00</div>
 
   
 <% if current_user %>
