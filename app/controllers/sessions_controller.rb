@@ -9,10 +9,8 @@ class SessionsController < ActionController::Base
     # binding.pry
     # redirect_to dashboard_path, notice: "Signed In!"
     session[:code] = request.url.split('=').last
-    # request_access_token
-    request_access_token(session[:code])
-
-    fail
+    request_access_token
+    # request_access_token(session[:code])
   end
 
   def destroy
@@ -44,21 +42,20 @@ class SessionsController < ActionController::Base
       }
     end
 
-  def request_access_token(code)
-    puts %{
+  # def request_access_token(code)
+  #   puts %{
 
-      #{access_token_body(code)}
+  #     #{access_token_body(code)}
 
-    }
-    conn = Faraday.post "https://api.harvestapp.com/oauth2/token" do |req|
-      req.headers['Content-Type'] = 'application/json'
-      # req.body = access_token_body(code).to_json
-      access_token_body(code).each do |key,value|
-        req.params[key] = value
-      end
-    end
-    fail
-    # render text: conn.inspect
-  end
+  #   }
+  #   conn = Faraday.post "https://api.harvestapp.com/oauth2/token" do |req|
+  #     req.headers['Content-Type'] = 'application/json'
+  #     # req.body = access_token_body(code).to_json
+  #     access_token_body(code).each do |key,value|
+  #       req.params[key] = value
+  #     end
+  #   end
+  #   # render text: conn.inspect
+  # end
 
 end

@@ -20,7 +20,7 @@ $('document').ready(function() {
 
 var Break = {
   startTimer: function() {
-    var time = 301000;
+    var time = 300000;
     setInterval(function() {
       time -= 1000; 
       minutes = Math.floor(time / 1000 / 60);
@@ -36,4 +36,10 @@ $('document').ready(function() {
     return false;
   });
 });
+
+var Stop = {
+  stopTimer: function() {
+    var time = 1500000
+  }
+}
 

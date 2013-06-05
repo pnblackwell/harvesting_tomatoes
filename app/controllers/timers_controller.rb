@@ -26,6 +26,12 @@ class TimersController < ActionController::Base
     render text: conn.inspect
   end
 
+  def start_toggle
+    token = Base64.encode64("pnblackwell@gmail.com:harvestingtomatoes").delete("\r\n")
+    
+    # conn = Faraday.get("https://pnbwell.")
+  end
+
   def get_tasks
     token = Base64.encode64("pnblackwell@gmail.com:harvestingtomatoes").delete("\r\n")
 
