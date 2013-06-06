@@ -6,6 +6,7 @@ HarvestingTomatoes::Application.routes.draw do
     member do
       get :toggle
       get :get_tasks
+      get :get_daily_info
     end
   end
 

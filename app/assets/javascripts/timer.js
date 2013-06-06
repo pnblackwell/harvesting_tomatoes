@@ -12,7 +12,7 @@ var Pomodoro = {
 }
 
 $('document').ready(function() {
-  $('.toggle').on('click', function() {
+  $('.begin').on('click', function() {
     Pomodoro.startTimer();
     return false;
   });
