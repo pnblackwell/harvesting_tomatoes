@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'harvested'
 gem 'faraday'
 gem 'omniauth-harvest'
+gem 'rest-client'
 
 group :production do
   gem 'pg'

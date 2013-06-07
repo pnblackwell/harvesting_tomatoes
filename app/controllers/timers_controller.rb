@@ -22,8 +22,13 @@ class TimersController < ActionController::Base
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
     end
     conn.headers = {'Content-Type' => 'application/json', 'Accept' => 'application/json', 'Authorization' => "Basic #{token}"}
-    response = conn.get '/daily'
+    @response = conn.get '/daily'
     render text: response.inspect
+    fail
+  end
+
+  def get_daily_projects
+    
   end
 
   def get_tasks

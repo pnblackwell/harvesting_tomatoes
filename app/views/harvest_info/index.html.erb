@@ -20,16 +20,16 @@
 
 
 
-
-<div id="buttons">
-<span><%= button_to 'Start Timer', toggle_timer_path(1), class: 'begin', :method => :get %></span>
-<span><%= button_to 'short break', '#', class: 'break' %></span>
-<span><%= button_to 'Stop', toggle_timer_path(1), class: 'stop', :method => :get %></span>
-<span><%= button_to 'Grab daily information', get_daily_info_timer_path(1), :method => :get %></span>
+  
+<div class="row">
+<div class="span2"><%= button_to 'Start Timer', toggle_timer_path(1), class: 'begin', :method => :get %></span>
+<div class="span2"><%= button_to 'short break', '#', class: 'break' %></span>
+<div class="span2"><%= button_to 'Stop', toggle_timer_path(1), class: 'stop', :method => :get %></span>
+<div class="span2"><%= button_to 'Grab daily information', get_daily_info_timer_path(1), :method => :get %></span>
+</div>
 
 <% if current_user %>
   <%= button_to 'sign_out', signout_path   %></li>
 <% else %>
   <%= button_to 'Sign Up with Harvest', '/auth/harvest' %></li>
 <% end %>
-</div>
