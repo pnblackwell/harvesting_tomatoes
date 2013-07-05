@@ -1,7 +1,12 @@
-<header> </header>
+<body>
+
 <br>
 <br>
-<h1> Harvesting Tomatoes </h1>
+<h1> Time Harvest </h1>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -17,19 +22,24 @@
 <br>
 <br>
 <br>
-
-
-
-  
-<div class="row">
-<div class="span2"><%= button_to 'Start Timer', toggle_timer_path(1), class: 'begin', :method => :get %></span>
-<div class="span2"><%= button_to 'short break', '#', class: 'break' %></span>
-<div class="span2"><%= button_to 'Stop', toggle_timer_path(1), class: 'stop', :method => :get %></span>
-<div class="span2"><%= button_to 'Grab daily information', get_daily_info_timer_path(1), :method => :get %></span>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+<div class="btn-group">
+<div id="begin"><div class="span3"><%= button_to 'Start Timer', toggle_timer_path(1), class: 'btn btn-large btn-primary', :method => :get %></div></div>
+<div id="break"><div class="span3"><%= button_to 'Short Break', '#', class: 'btn btn-large btn-primary' %></div></div>
+<div id="stop"><div class="span3"><%= button_to 'Stop', toggle_timer_path(1), class: 'btn btn-large btn-primary', :method => :get %></div></div>
+<div class="span3"><%= button_to 'Grab daily information', get_daily_info_timer_path(1), class: 'btn btn-large btn-primary', :method => :get %></div> 
 
 <% if current_user %>
-  <%= button_to 'sign_out', signout_path   %></li>
+  <div class="span3"><%= button_to 'sign_out', signout_path, class: 'btn btn-large btn-primary'%></div>
 <% else %>
-  <%= button_to 'Sign Up with Harvest', '/auth/harvest' %></li>
+  <div class="span3"><%= button_to 'Sign Up with Harvest', '/auth/harvest', class: 'btn btn-large btn-primary'   %></div>
 <% end %>
+</div>

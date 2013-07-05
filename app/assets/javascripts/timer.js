@@ -18,7 +18,7 @@ var Pomodoro = {
 }
 
 $('document').ready(function() {
-  $('.begin').on('click', function() {
+  $('#begin').on('click', function() {
     Pomodoro.startTimer();
     return false;
   });
@@ -37,7 +37,7 @@ var Break = {
 }
 
 $('document').ready(function() {
-  $('.break').on('click', function() {
+  $('#break').on('click', function() {
     Break.startTimer();
     return false;
   });
